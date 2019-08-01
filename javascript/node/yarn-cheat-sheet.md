@@ -47,6 +47,6 @@ https://github.com/yarnpkg/yarn/issues/2049
 ### where to find the what has been yarn linked
 
 - linux: ~/.config/yarn/link
-- windows: C:\Users\<userName>\AppData\Local\Yarn\Data\link
+- windows: C:\Users\userName\AppData\Local\Yarn\Data\link
 
 
