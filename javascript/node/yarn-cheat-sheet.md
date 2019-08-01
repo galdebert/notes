@@ -46,8 +46,16 @@ https://github.com/yarnpkg/yarn/issues/2049
 
 ### yarn link
 
+https://yarnpkg.com/lang/en/docs/cli/link/
+
+link
 - in packageA directory of the custom version: `yarn link`
-- in your packageB using packageA custom version  `yarn link packageA`
+- in your packageB using packageA: `yarn link packageA`
+
+unlink
+- in packageA directory of the custom version: `yarn unlink`
+- in your packageB using packageA: `yarn unlink packageA`
+
 
 ### where to find the what has been yarn linked
 
