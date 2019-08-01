@@ -44,6 +44,11 @@ https://github.com/yarnpkg/yarn/issues/2049
 ```
 `yarn run server --port=1337` runs `server.js --port=1337`
 
+### yarn link
+
+- in packageA directory of the custom version: `yarn link`
+- in your packageB using packageA custom version  `yarn link packageA`
+
 ### where to find the what has been yarn linked
 
 - linux: ~/.config/yarn/link
