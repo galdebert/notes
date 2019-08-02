@@ -53,8 +53,11 @@ link
 - in your packageB using packageA: `yarn link packageA`
 
 unlink
-- in packageA directory of the custom version: `yarn unlink`
-- in your packageB using packageA: `yarn unlink packageA`
+- in packageA directory of the custom version:
+ - `yarn unlink`
+- in your packageB using packageA:
+  - `yarn unlink packageA`
+  - `yarn install`
 
 
 ### where to find the what has been yarn linked
