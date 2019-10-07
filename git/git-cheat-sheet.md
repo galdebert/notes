@@ -21,7 +21,7 @@ git reset --hard
 - select a file on the right
 => will show the diff of the file versions at those 2 commits 
 
-# smartgit: chen merging a file, check the each side difference with the common base
+# smartgit: when merging a file, check the each side difference with the common base
 
 TODO
 
