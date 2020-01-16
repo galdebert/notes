@@ -50,7 +50,7 @@ guillaume@linux:~/dev/galdebert$ which ssh-agent
 
 ## Generate the key
 
-and run:
+run:
 ```
 ssh-keygen -t rsa -b 4096
 ```
