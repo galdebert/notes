@@ -1,4 +1,4 @@
-# my-vscode-keyboard-shortcuts
+# vscode-shortcuts
 
 | key              | desc                           |
 | ---------------- | ------------------------------ |
