@@ -11,6 +11,7 @@
 | Alt+D            | go to definition               |
 | Alt+T            | go to type definition          |
 | Alt+R            | list all references            |
+| Alt+I            | go to implementation           |
 | **refactor**     |
 | Ctrl+;           | quick fix                      |
 | F2               | rename                         |
@@ -24,4 +25,3 @@
 | F8               | go to next problem             |
 | Alt+Y            | peek type definition           |
 | Alt+V            | peek definition                |
-| Alt+I            | peek implementation            |
