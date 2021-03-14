@@ -4,7 +4,7 @@
 - `yarn why mypackage`: tells what package has mypackage as a dependency
 - `yarn upgrade`: changes your `yarn-lock.json`, but **does NOT change** `package.json`
 - `yarn upgrade --latest`: same as the upgrade command, but ignores the version range specified in package.json. Instead, the version specified by the latest tag will be used (potentially upgrading the packages across major versions). `package.json` **is updated**.
-- `yarn upgrade-interactive --latest`: intercative version of `yarn upgrade --latest`
+- `yarn upgrade-interactive --latest`: interactive version of `yarn upgrade --latest`
 - `yarn check`: checks dependencies
 - `yarn info mypackage versions`: views mypackage available versions online
 - `yarn info mypackage version`: views mypackage latest version online
