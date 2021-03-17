@@ -65,4 +65,7 @@ unlink
 - linux: ~/.config/yarn/link
 - windows: `explorer C:\Users\%USERNAME%\AppData\Local\Yarn\Data\link`
 
+# package.json "resolutions" specification
+
+https://github.com/yarnpkg/rfcs/blob/master/implemented/0000-selective-versions-resolutions.md
 
