@@ -108,23 +108,3 @@ Remove the submodule directory from the superproject's .git/modules directory
 Remove the entry in .gitmodules and remove the submodule directory located at path/to/submodule
 
 `git rm -f path/to/submodule`
-
-
-<!------------------------------------------------------>
-## How to ignore changes in a git submodule
-
-> but this does not sound like a good idea to me...
-> maybe it's "force" that we work on the sub-repo using a dedicated clone
-> but the issue is that if we make a mistake and update the submodule instead, then we'll have a silent problem ??
-
-https://medicineyeh.wordpress.com/2015/07/15/how-to-ignore-changes-in-git-submodules/
-
-in the `.gitmodules` file
-
-```
-[submodule "converter/cl2ptx/libclc"]
-path = converter/cl2ptx/libclc
-url = http://llvm.org/git/libclc.git
-ignore = dirty
-```
-
