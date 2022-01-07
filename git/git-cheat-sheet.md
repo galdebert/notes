@@ -6,6 +6,8 @@ git add -A && git commit -m mymessage
 ```
 
 
+<!-------------------------------------------------------------------------------------------------------->
+
 # Normalize EOL to what git clone gives you
 
 MAKE SURE ALL YOUR WIP IS COMMIT, and then:
@@ -14,6 +16,9 @@ git rm --cached -r .
 git reset --hard
 ```
 
+
+<!-------------------------------------------------------------------------------------------------------->
+
 # smartgit: check diff of 2 previous versions of a file
 
 - use Log in smartgit
@@ -21,9 +26,12 @@ git reset --hard
 - select a file on the right
 => will show the diff of the file versions at those 2 commits 
 
-# smartgit: when merging a file, check the each side difference with the common base
+# smartgit: when merging a file, check each side difference with the common base
 
-TODO
+Use the the super useful diff with base buttton
+
+
+<!-------------------------------------------------------------------------------------------------------->
 
 # Create a patch for a list a commits
 
@@ -49,7 +57,41 @@ or
 git merge --squash my-commit-id
 ```
 
-## Remove a submodule
+<!-------------------------------------------------------------------------------------------------------->
+
+# submodules
+
+<!------------------------------------------------------>
+## How to "git clone" including submodules?
+
+https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodules
+
+`git clone --recurse-submodules git://github.com/foo/bar.git`
+
+> Is there any way to specify this behavior as default in your git repository, so that less-informed cloners will automatically get an initialized submodule?
+> Sadly, no. (Not that I know of, at least.)
+
+<!------------------------------------------------------>
+## When a submodule was added to a repo you already clones, how to initialize the submodule locally?
+
+`git submodule update --init --recursive`
+
+<!------------------------------------------------------>
+## How to ignore changes in a git submodule
+
+https://medicineyeh.wordpress.com/2015/07/15/how-to-ignore-changes-in-git-submodules/
+
+in the `.gitmodules` file
+
+```
+[submodule "converter/cl2ptx/libclc"]
+path = converter/cl2ptx/libclc
+url = http://llvm.org/git/libclc.git
+ignore = dirty
+```
+
+<!------------------------------------------------------>
+## How to remove a submodule
 
 Remove the submodule entry from .git/config
 
@@ -62,4 +104,7 @@ Remove the submodule directory from the superproject's .git/modules directory
 Remove the entry in .gitmodules and remove the submodule directory located at path/to/submodule
 
 `git rm -f path/to/submodule`
+
+
+
 
