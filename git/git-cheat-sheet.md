@@ -90,6 +90,14 @@ url = http://llvm.org/git/libclc.git
 ignore = dirty
 ```
 
+https://git-scm.com/docs/gitmodules
+
+`submodule.<name>.ignore`
+Defines under what circumstances git status and the diff family show a submodule as modified. The following values are supported:
+
+`dirty`
+All changes to the submodule’s work tree will be ignored, only committed differences between the HEAD of the submodule and its recorded state in the superproject are taken into account.
+
 <!------------------------------------------------------>
 ## How to remove a submodule
 
