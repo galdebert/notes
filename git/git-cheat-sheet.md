@@ -77,18 +77,14 @@ https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodule
 `git submodule update --init --recursive`
 
 <!------------------------------------------------------>
-## How to ignore changes in a git submodule
+## pull the submodules to their current submodul commits
 
-https://medicineyeh.wordpress.com/2015/07/15/how-to-ignore-changes-in-git-submodules/
+`git submodule update --recursive`
 
-in the `.gitmodules` file
+<!------------------------------------------------------>
+## pull the submodules to their branch latest commmit (why would you do that??...)
 
-```
-[submodule "converter/cl2ptx/libclc"]
-path = converter/cl2ptx/libclc
-url = http://llvm.org/git/libclc.git
-ignore = dirty
-```
+`git pull --recurse-submodules`
 
 https://git-scm.com/docs/gitmodules
 
@@ -114,5 +110,21 @@ Remove the entry in .gitmodules and remove the submodule directory located at pa
 `git rm -f path/to/submodule`
 
 
+<!------------------------------------------------------>
+## How to ignore changes in a git submodule
 
+> but this does not sound like a good idea to me...
+> maybe it's "force" that we work on the sub-repo using a dedicated clone
+> but the issue is that if we make a mistake and update the submodule instead, then we'll have a silent problem ??
+
+https://medicineyeh.wordpress.com/2015/07/15/how-to-ignore-changes-in-git-submodules/
+
+in the `.gitmodules` file
+
+```
+[submodule "converter/cl2ptx/libclc"]
+path = converter/cl2ptx/libclc
+url = http://llvm.org/git/libclc.git
+ignore = dirty
+```
 
