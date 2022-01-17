@@ -72,7 +72,7 @@ https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodule
 > Sadly, no. (Not that I know of, at least.)
 
 <!------------------------------------------------------>
-## When a submodule was added to a repo you already clones, how to initialize the submodule locally?
+## When a submodule was added to a repo you already cloned, how to initialize the submodule locally?
 
 `git submodule update --init --recursive`
 
