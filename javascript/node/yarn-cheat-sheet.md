@@ -57,9 +57,7 @@ yarn install will create a symlink
 `dev/my-app/node_modules/mobx` pointing to target `dev/my-mobx/dist/v5`
 
 
-### yarn link
-
-`yarn link` registers some linkable packages **globally**. This is sounds awful. Don't use it
+### yarn link (registers some linkable packages **globally**. This is awful, don't use it!)
 
 https://yarnpkg.com/lang/en/docs/cli/link/
 
