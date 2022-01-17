@@ -44,21 +44,37 @@ https://github.com/yarnpkg/yarn/issues/2049
 ```
 `yarn run server --port=1337` runs `server.js --port=1337`
 
+### use a locally modified version of a package
+
+in `my-app/package.json`:
+```
+"dependencies": {
+   "mobx": "link:../my-mobx/dist/v5",
+}
+```
+
+yarn install will create a symlink
+`dev/my-app/node_modules/mobx` pointing to target `dev/my-mobx/dist/v5`
+
+
 ### yarn link
+
+`yarn link` registers some linkable packages **globally**. This is sounds awful. Don't use it
 
 https://yarnpkg.com/lang/en/docs/cli/link/
 
 link
-- in packageA directory of the custom version: `yarn link`
-- in your packageB using packageA: `yarn link packageA`
-
+- in `dev/my-mobx/dist/v5`, run `yarn link`
+  - creates the symlink `%LOCALAPPDATA%\Yarn\Data\link\mobx` pointing to target `dev/my-mobx/dist/v5`
+- in `dev/my-app`, run `yarn link mobx`
+  - creates the symlink `dev/my-app/node_modules/mobx` pointing to target `%LOCALAPPDATA%\Yarn\Data\link\mobx`
+ 
 unlink
-- in packageA directory of the custom version:
- - `yarn unlink`
-- in your packageB using packageA:
-  - `yarn unlink packageA`
+- in `dev/my-app`, run
+  - `yarn unlink mobx`
   - `yarn install`
-
+- in `dev/my-mobx/dist/v5`, run
+  - `yarn link`
 
 ### where to find the what has been yarn linked
 
