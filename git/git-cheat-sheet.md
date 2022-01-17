@@ -77,7 +77,7 @@ https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodule
 `git submodule update --init --recursive`
 
 <!------------------------------------------------------>
-## pull the submodules to their current submodul commits
+## pull the submodules to their current submodule commits
 
 `git submodule update --recursive`
 
