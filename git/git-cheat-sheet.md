@@ -82,9 +82,16 @@ https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodule
 `git submodule update --recursive`
 
 <!------------------------------------------------------>
-## pull the submodules to their branch latest commmit (why would you do that??...)
+## pull the submodules to their current submodule commits
 
 `git pull --recurse-submodules`
+
+there seem to be a lot of confusion on the internat about whether `git pull --recurse-submodules`
+pulls the submodule to their current submodule commits -or- to their current branch latest commit...
+
+note also `git config --global submodule.recurse true` that does `git pull --recurse-submodules` for each `git pull`
+
+https://stackoverflow.com/questions/53514521/what-are-the-drawbacks-to-setting-gits-submodule-recurse-config-option-to-true
 
 <!------------------------------------------------------>
 ## How to remove a submodule
