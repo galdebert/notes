@@ -79,12 +79,9 @@ https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodule
 <!------------------------------------------------------>
 ## pull the submodules to their current submodule commits
 
-`git submodule update --recursive`
+- `git pull` and `git submodule update --recursive`
+- `git pull --recurse-submodules`
 
-<!------------------------------------------------------>
-## pull the submodules to their branch latest commmit (why would you do that??...)
-
-`git pull --recurse-submodules`
 
 <!------------------------------------------------------>
 ## How to remove a submodule
