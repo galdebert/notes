@@ -77,21 +77,30 @@ https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodule
 `git submodule update --init --recursive`
 
 <!------------------------------------------------------>
-## pull the submodules to their current submodule commits
+## pull the submodules to their revision stored in the parent repo
+
+`git pull && git submodule update --recursive`
 
 `git submodule update --recursive`
+looks to see which revision the parent repository has stored for each submodule, then checks out that revision in each submodule.
+It does NOT pull the latest commits for each submodule.
 
 <!------------------------------------------------------>
-## pull the submodules to their current submodule commits
+## pull the submodules to their latest revision
 
 `git pull --recurse-submodules`
 
-there seem to be a lot of confusion on the internat about whether `git pull --recurse-submodules`
-pulls the submodule to their current submodule commits -or- to their current branch latest commit...
+https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules
 
-note also `git config --global submodule.recurse true` that does `git pull --recurse-submodules` for each `git pull`
+`git submodule foreach git pull origin master` or `git pull origin master --recurse-submodules`
+is what you want if you intend to **update each submodule to the latest from their origin repositories**.
+**Only then will you get pending changes in the parent repo with updated revision hashes for submodules**.
+Check those in and you're good.
+
+see also `git config --global submodule.recurse true
 
 https://stackoverflow.com/questions/53514521/what-are-the-drawbacks-to-setting-gits-submodule-recurse-config-option-to-true
+
 
 <!------------------------------------------------------>
 ## How to remove a submodule
