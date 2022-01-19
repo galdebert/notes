@@ -110,21 +110,15 @@ for each sub in submodules
 Read the section "Working on a Submodule" https://git-scm.com/book/en/v2/Git-Tools-Submodules
 for more info about `git submodule update --remote` and stuff like `git config -f .gitmodules submodule.MySubmodule.branch dev`
 
-<!------------------------------------------------------>
 ## push with submodules 
 
-**If we commit in the main project and push it up without pushing the submodule changes up as well**,
-other people who try to check out our changes are going to be in trouble since they will have no way
-to get the submodule changes that are depended on. Those changes will only exist on our local copy.
-
-In order to make sure this doesn’t happen,
-**you can ask Git to check that all your submodules have been pushed properly before pushing the main project**:
+When your submodule is on branch and that you use this submodule to commit changes, 
+we MUST push the submodule new commits BEFORE pushing the superproject. To ensure this:
 
 `git push --recurse-submodules=check`
 
-If you want the check behavior to happen for all pushes, you can make this behavior the default by doing:
-
 `git config push.recurseSubmodules check` so that `git push` behaves automatically as `git push --recurse-submodules=check`
+
 
 <!------------------------------------------------------>
 ## How to remove a submodule
