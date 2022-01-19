@@ -100,11 +100,12 @@ NOTE IT'S MUCH SIMPLER TO MANUALLY CHECKOUT EACH SUBMODULE AT THE DESIRED COMMIT
 - `git push`
 
 if we still want automatically do this on all submodules, use `git submodule update --remote`, it's equivalent to
-- for each sub in submodules
-  - `cd sub`
-  - `git checkout branch-or-commit`
-  - `git pull`
-  - `cd ..`
+
+for each sub in submodules
+- `cd sub`
+- `git checkout branch-or-commit`
+- `git pull`
+- `cd ..`
 
 Read the section "Working on a Submodule" https://git-scm.com/book/en/v2/Git-Tools-Submodules
 for more info about `git submodule update --remote` and stuff like `git config -f .gitmodules submodule.MySubmodule.branch dev`
