@@ -6,7 +6,7 @@ git add -A && git commit -m mymessage
 ```
 
 
-<!-------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
 
 # Normalize EOL to what git clone gives you
 
@@ -17,7 +17,7 @@ git reset --hard
 ```
 
 
-<!-------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
 
 # smartgit: check diff of 2 previous versions of a file
 
@@ -31,7 +31,7 @@ git reset --hard
 Use the the super useful diff with base buttton
 
 
-<!-------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
 
 # Create a patch for a list a commits
 
@@ -57,19 +57,18 @@ or
 git merge --squash my-commit-id
 ```
 
-<!-------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
 
 # submodules
 
 <!------------------------------------------------------>
 ## How to "git clone" including submodules?
 
-https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodules
-
 `git clone --recurse-submodules git://github.com/foo/bar.git`
 
-> Is there any way to specify this behavior as default in your git repository, so that less-informed cloners will automatically get an initialized submodule?
-> Sadly, no. (Not that I know of, at least.)
+> Is there any way to specify this behavior as default in your git repository,
+> so that `git clone git://github.com/foo/bar.git` does `--recurse-submodules` automatically
+> **Sadly, no.**
 
 <!------------------------------------------------------>
 ## When a submodule was added to a repo you already cloned, how to initialize the submodule locally?
@@ -77,30 +76,54 @@ https://stackoverflow.com/questions/3796927/how-to-git-clone-including-submodule
 `git submodule update --init --recursive`
 
 <!------------------------------------------------------>
-## pull the submodules to their revision stored in the parent repo
+## pull with submodules at their at their revisions stored in superproject
 
-`git pull && git submodule update --recursive`
+- option 1: `git pull && git submodule update --recursive`
+- option 2: `git pull --recurse-submodules`
+- option 3: `git config submodule.recurse true` so that `git pull` behaves automatically as `git pull --recurse-submodules`
 
-`git submodule update --recursive`
-looks to see which revision the parent repository has stored for each submodule, then checks out that revision in each submodule.
-It does NOT pull the latest commits for each submodule.
+> NOTE there is a lot of confusion about whether `git pull --recurse-submodules` either
+> 1. pulls submodules at their at their **revisions stored in superproject**
+> 2. or pulls the submodule **latest commit** in their master branch
+>  
+> https://git-scm.com/book/en/v2/Git-Tools-Submodules is very clear, **it's 1.**
 
 <!------------------------------------------------------>
-## pull the submodules to their latest revision
+## pull all submodules to their latest revision of their master (or another) branch
 
-`git pull --recurse-submodules`
+NOTE IT'S MUCH SIMPLER TO MANUALLY CHECKOUT EACH SUBMODULE AT THE DESIRED COMMIT
+- `cd MySubmodule`
+- `git checkout branch-or-commit`
+- `git pull`
+- `cd ..`
+- `git commit`
+- `git push`
 
-https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules
+if we still want automatically do this on all submodules, use `git submodule update --remote`, it's equivalent to
+- for each sub in submodules
+  - `cd sub`
+  - `git checkout branch-or-commit`
+  - `git pull`
+  - `cd ..`
 
-`git submodule foreach git pull origin master` or `git pull origin master --recurse-submodules`
-is what you want if you intend to **update each submodule to the latest from their origin repositories**.
-**Only then will you get pending changes in the parent repo with updated revision hashes for submodules**.
-Check those in and you're good.
+Read the section "Working on a Submodule" https://git-scm.com/book/en/v2/Git-Tools-Submodules
+for more info about `git submodule update --remote` and stuff like `git config -f .gitmodules submodule.MySubmodule.branch dev`
 
-see also `git config --global submodule.recurse true
+<!------------------------------------------------------>
+## push with submodules 
 
-https://stackoverflow.com/questions/53514521/what-are-the-drawbacks-to-setting-gits-submodule-recurse-config-option-to-true
+**If we commit in the main project and push it up without pushing the submodule changes up as well**,
+other people who try to check out our changes are going to be in trouble since they will have no way
+to get the submodule changes that are depended on. Those changes will only exist on our local copy.
 
+In order to make sure this doesn’t happen,
+**you can ask Git to check that all your submodules have been pushed properly before pushing the main project**:
+
+`git push --recurse-submodules=check`
+
+If you want the check behavior to happen for all pushes, you can make this behavior the default by doing:
+
+`git config push.recurseSubmodules check` so that `git push` behaves automatically as `git push --recurse-submodules=check`
 
 <!------------------------------------------------------>
 ## How to remove a submodule
