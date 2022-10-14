@@ -141,4 +141,3 @@ Remove the entry in .gitmodules and remove the submodule directory located at pa
 - https://junyonglee.me/github/How-to-make-forked-private-repository/
 - https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private
 - https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository
-- 
