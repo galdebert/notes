@@ -1,3 +1,20 @@
+# git config
+
+list the git configs
+- `git config --list` 
+- `git config --system --list` 
+- `git config --global --list` 
+- `git config --local --list` 
+
+find/edit the config files
+- `git config --system --edit` ex `C:\dev\git\etc\gitconfig`
+- `git config --global --edit` ex `C:\Users\theuser\.gitconfig`
+- `git config --local --edit`
+ 
+# how to configure the git credential manager
+
+TODO
+
 # git commit all
 
 including untracked files
