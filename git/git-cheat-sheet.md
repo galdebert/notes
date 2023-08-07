@@ -13,7 +13,8 @@ find/edit the config files
  
 # how to configure the git credential manager
 
-TODO
+- simply make sure you have `credential.helper=manager`
+- run a git command that requires git credentials, the credential manager will ask for your user/password and will remember it
 
 # git commit all
 
