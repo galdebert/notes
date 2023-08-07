@@ -3,7 +3,7 @@
 
 3-legged OAuth describes the scenario for which OAuth was originally developed.
 
-A **user** (guillaume.aldebert@autodesk.com)<br>
+A **user** (x.y@autodesk.com)<br>
 wants to give a<br>
 **3rd party app** (my-cool-application...)<br>
 access to a<br>
